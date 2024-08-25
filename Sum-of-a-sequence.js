@@ -24,3 +24,16 @@ function sequenceSum(b, e, s) {
 }
 
 // or
+
+function sequenceSum(begin, end, step){
+  let sum = 0;
+  let upwards = (begin <= end) && (step > 0);
+  let downwards = (begin >= end) && (step < 0);
+  if(upwards)
+    for(let i = begin; i <= end; i += step)
+      sum += i;
+  else if(downwards)
+    for(let i = begin; i >= end; i += step)
+      sum += i;
+  return sum; 
+}
